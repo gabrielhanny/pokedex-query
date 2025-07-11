@@ -1,0 +1,13 @@
+<!-- public/icon/pokeball-colored.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+
+  <circle cx="32" cy="32" r="30" stroke="#000" stroke-width="4" fill="none" />
+
+ 
+  <path d="M2 32h60" stroke="#fff" stroke-width="4" />
+
+
+  <path d="M2 32a30 30 0 0 1 60 0H2Z" fill="#e60000" />
+
+  <circle cx="32" cy="32" r="10" fill="#fff" stroke="#000" stroke-width="4" />
+</svg>
