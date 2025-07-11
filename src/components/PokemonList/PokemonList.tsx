@@ -1,10 +1,10 @@
 'use client';
 
-import { useEffect, useState, useCallback } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import { fetchPokemonList } from '@/lib/api/pokemon';
-import PokemonCard, { PokemonCardProps } from '../PokemonCard/PokemonCard';
 
+import PokemonCard, { PokemonCardProps } from '../PokemonCard/PokemonCard';
 
 export default function PokemonList() {
   const [pokemons, setPokemons] = useState<PokemonCardProps[]>([]);
@@ -30,12 +30,12 @@ export default function PokemonList() {
   }, [loadPokemon]);
 
   return (
-    <section className="custom-container pt-6 md:pt-24 pb-12 md:pb-[96px]">
-      <h2 className="text-neutral-900 font-bold text-[20px] md:text-[32px] text-center md:text-left mb-6">
+    <section className='custom-container pt-6 md:pt-24 pb-12 md:pb-[96px]'>
+      <h2 className='text-neutral-900 font-bold text-[20px] md:text-[32px] text-center md:text-left mb-6'>
         List Pokémon
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-6 place-items-center">
+      <div className='grid grid-cols-1 md:grid-cols-4 gap-6 place-items-center'>
         {pokemons.map((pokemon) => (
           <PokemonCard
             key={pokemon.id}
@@ -49,14 +49,14 @@ export default function PokemonList() {
       </div>
 
       {/* Load More Button */}
-      <div className="pt-6 flex justify-center">
+      <div className='pt-6 flex justify-center'>
         <button
           onClick={() => setOffset((prev) => prev + limit)}
           disabled={loading}
-          className="border border-neutral-300 rounded-full 
+          className='border border-neutral-300 rounded-full 
             text-neutral-900 font-semibold 
             px-8 py-3 md:w-[237px] md:h-[52px] w-[180px] h-[44px] 
-            text-sm md:text-base"
+            text-sm md:text-base'
         >
           {loading ? 'Loading...' : 'Load More'}
         </button>

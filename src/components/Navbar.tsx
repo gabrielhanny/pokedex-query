@@ -3,11 +3,9 @@
 import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
-
 import { useEffect, useState } from 'react';
 
 import SearchInput from './SearchInput';
-
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -25,15 +23,15 @@ export default function Navbar() {
         scrolled ? 'bg-white border-b border-neutral-200' : 'bg-primary-300'
       )}
     >
-      <div className="custom-container h-16 md:h-20 flex items-center justify-between gap-2 px-4">
+      <div className='custom-container h-16 md:h-20 flex items-center justify-between gap-2 px-4'>
         {/* Pokéball + Pokedex */}
-        <Link href="/" className="flex items-center gap-2">
+        <Link href='/' className='flex items-center gap-2'>
           <Image
-            src="/icon/pokeball-colored.svg"
-            alt="Pokeball"
+            src='/icon/pokeball-colored.svg'
+            alt='Pokeball'
             width={32}
             height={32}
-            className="w-6 h-6 md:w-8 md:h-8"
+            className='w-6 h-6 md:w-8 md:h-8'
           />
           {/* Teks "Pokedex" when scroll */}
           <span
@@ -49,8 +47,8 @@ export default function Navbar() {
 
         {/* Search Input when scroll */}
         {scrolled && (
-          <div className="flex-1 max-w-[600px] md:block">
-            <SearchInput size="desktop" />
+          <div className='flex-1 max-w-[600px] md:block'>
+            <SearchInput size='desktop' />
           </div>
         )}
       </div>

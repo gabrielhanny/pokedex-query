@@ -1,8 +1,8 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   images: {
-    domains: ["raw.githubusercontent.com"],
+    domains: ['raw.githubusercontent.com'],
   },
 };
 

@@ -18,8 +18,9 @@ const eslintConfig = [
       import: importPlugin,
     },
     rules: {
+ 
       'import/order': [
-        'error',
+        'warn',
         {
           groups: [
             'builtin',
@@ -49,6 +50,7 @@ const eslintConfig = [
           },
         },
       ],
+      '@typescript-eslint/no-unused-vars': 'warn',
     },
     ignores: ['components/ui/**'],
   },

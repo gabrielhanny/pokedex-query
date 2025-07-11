@@ -13,4 +13,3 @@ export const usePokemonListQuery = (limit = 24, offset = 0) =>
     },
     staleTime: 1000 * 60 * 5,
   });
-

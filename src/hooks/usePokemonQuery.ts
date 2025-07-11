@@ -8,6 +8,6 @@ export const useSearchPokemon = (keyword: string) => {
   return useQuery({
     queryKey: ['pokemon-search', keyword],
     queryFn: () => fetchPokemonByName(keyword),
-    enabled: !!keyword, 
+    enabled: !!keyword,
   });
 };

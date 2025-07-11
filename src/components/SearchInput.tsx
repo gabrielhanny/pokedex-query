@@ -2,16 +2,13 @@
 
 import clsx from 'clsx';
 import Image from 'next/image';
-
 import { useDispatch } from 'react-redux';
 
-import { setKeyword, clearKeyword } from '@/lib/features/searchSlice';
+import { clearKeyword, setKeyword } from '@/lib/features/searchSlice';
 import { useAppSelector } from '@/lib/hook';
 
-
-
 interface Props {
-  size?: 'desktop' | 'mobile' | 'hero'; 
+  size?: 'desktop' | 'mobile' | 'hero';
 }
 
 export default function SearchInput({ size = 'desktop' }: Props) {
@@ -48,10 +45,10 @@ export default function SearchInput({ size = 'desktop' }: Props) {
       )}
     >
       <input
-        type="text"
+        type='text'
         value={keyword}
         onChange={handleInput}
-        placeholder="Search Pokémon"
+        placeholder='Search Pokémon'
         className={clsx(
           'flex-1 bg-transparent text-neutral-900 placeholder:text-neutral-400 focus:outline-none',
           {
@@ -64,9 +61,9 @@ export default function SearchInput({ size = 'desktop' }: Props) {
       {/* Clear Icon */}
       {keyword && (
         <button
-          type="button"
+          type='button'
           onClick={handleClear}
-          aria-label="Clear search"
+          aria-label='Clear search'
           className={clsx(
             'flex items-center justify-center rounded-full bg-neutral-400 text-white',
             {
@@ -80,10 +77,10 @@ export default function SearchInput({ size = 'desktop' }: Props) {
       )}
 
       {/* Search Icon */}
-      <button type="button" onClick={handleSearch} aria-label="Search">
+      <button type='button' onClick={handleSearch} aria-label='Search'>
         <Image
-          src="/images/search.png"
-          alt="Search"
+          src='/images/search.png'
+          alt='Search'
           width={iconSize}
           height={iconSize}
         />
@@ -91,4 +88,3 @@ export default function SearchInput({ size = 'desktop' }: Props) {
     </div>
   );
 }
-

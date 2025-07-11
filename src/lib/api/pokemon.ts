@@ -48,8 +48,12 @@ export const normalizePokemonData = (detail: any) => {
   };
 };
 
-// Detail Page 
-export const normalizeFullPokemonData = (detail: any, species: any, evolution: any) => {
+// Detail Page
+export const normalizeFullPokemonData = (
+  detail: any,
+  species: any,
+  evolution: any
+) => {
   return {
     id: detail.id,
     name: detail.name,
@@ -79,7 +83,9 @@ const extractEnglishDescription = (species: any) => {
   const entry = species.flavor_text_entries.find(
     (entry: any) => entry.language.name === 'en'
   );
-  return entry ? entry.flavor_text.replace(/\f|\n/g, ' ') : 'No description available.';
+  return entry
+    ? entry.flavor_text.replace(/\f|\n/g, ' ')
+    : 'No description available.';
 };
 
 // evolution_chain.url
@@ -100,7 +106,7 @@ const fetchEvolutionChain = async (url: string) => {
       image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`,
     });
     if (chain.evolves_to.length > 0) {
-      extractEvolutions(chain.evolves_to[0]); 
+      extractEvolutions(chain.evolves_to[0]);
     }
   };
 
@@ -108,7 +114,7 @@ const fetchEvolutionChain = async (url: string) => {
   return evolutions;
 };
 
-// ID from URL 
+// ID from URL
 const extractIdFromUrl = (url: string) => {
   const segments = url.split('/');
   return parseInt(segments[segments.length - 2]);
