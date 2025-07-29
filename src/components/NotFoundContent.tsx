@@ -1,12 +1,16 @@
-'use client';
+// src/components/NotFoundContent.tsx
+'use client'; // This MUST be a Client Component because it uses useSearchParams
 
 import Image from 'next/image';
+import { useSearchParams } from 'next/navigation'; // <-- useSearchParams is used here
 
-interface Props {
-  keyword: string;
-}
+// --- REMOVE THE INTERFACE PROPS ENTIRELY ---
+// interface Props {} 
 
-export default function NotFoundContent({ keyword }: Props) {
+export default function NotFoundContent() { // <-- Component no longer expects any props
+  const searchParams = useSearchParams();
+  const keyword = searchParams.get('q')?.toLowerCase() || ''; // Access keyword inside the Client Component
+
   return (
     <section className='flex flex-col min-h-[calc(100vh-88px)]'>
       {' '}
